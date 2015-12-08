@@ -14,6 +14,10 @@
   ],
   "author": "brainslab",
   "license": "ISC",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/pablo-bl/cms.git"
+  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "chalk": "^1.1.1",
