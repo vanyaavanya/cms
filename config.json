@@ -1,0 +1,11 @@
+{
+  "development": {
+                    "url": "mongodb://localhost/dev"
+                  },
+  "production":   {
+                    "url": "mongodb://localhost/prod"
+                  },
+  "test":         {
+                    "url": "mongodb://localhost/test"
+                  }
+}

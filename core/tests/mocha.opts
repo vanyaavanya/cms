@@ -1,0 +1,4 @@
+--throw-deprecation
+-w
+-t 10000
+--compilers coffee:coffee-script/register
