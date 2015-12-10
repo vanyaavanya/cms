@@ -28,12 +28,7 @@ schema = new mongoose.Schema
   childIds: [ Number ]
   linkedIds: [ Number ]
   pinnedComments: [ Number ]
-  attachments: [
-    {
-      name: String
-      url: String
-    }
-  ]
+  attachmentIds: [ Number ]
   chat:
     name: String
     url: String

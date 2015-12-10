@@ -37,12 +37,7 @@ schema = new mongoose.Schema
         id: Number
       }
     ]
-  attachments: [
-    {
-      name: String
-      url: String
-    }
-  ]
+  attachmentIds: [ Number ]
   chat:
     name: String
     url: String
