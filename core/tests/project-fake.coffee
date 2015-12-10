@@ -11,16 +11,27 @@ module.exports = {
                   sprint: [
                     {
                       id:111
+                      name: 'sprint 1'
+                      startDate: moment().
+                      endDate: moment().add(7, 'd')
                       tasks: [111111, 111222, 111333]
                     },
                     {
-                      id:222
+                      id: 222
+                      name: 'sprint 2'
+                      startDate: moment().add(14, 'd')
+                      endDate: moment().add(21, 'd')
                       tasks: [222111, 222222, 222333]
-                    },
+                    }
+                  ]
+                  backlog:
+                    taskId: [444444, 555555, 666666]
+                  spec: [
                     {
-                      id:333
-                      tasks: [333111, 333222, 333333]
-                    },
+                      name: 'spec item name'
+                      description: 'descriotion'
+                      attachments: ''
+                    }
                   ]
                   access:
                     groups: [
@@ -43,7 +54,7 @@ module.exports = {
                         url: '/admin/users/123456'
                       }
                     ]
-                  documents: [
+                  attachments: [
                     {
                       name: 'Spec'
                       url: '/upload/12/spec.doc'
