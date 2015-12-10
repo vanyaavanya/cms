@@ -1,7 +1,6 @@
 mongoose = require 'mongoose'
 
 schema = new mongoose.Schema
-
   id: Number
   name: String
   url: String
