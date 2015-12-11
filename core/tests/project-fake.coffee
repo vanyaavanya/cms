@@ -12,7 +12,7 @@ module.exports = {
                     {
                       id:111
                       name: 'sprint 1'
-                      startDate: moment().
+                      startDate: moment()
                       endDate: moment().add(7, 'd')
                       tasks: [111111, 111222, 111333]
                     },

@@ -75,5 +75,5 @@ process.on 'uncaughtException', (err) ->
 
 server.start(app)
 
-exports.db  = db       
+exports.db  = db
 exports.app = app
