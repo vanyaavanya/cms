@@ -1,12 +1,6 @@
-extends layout
-
-block content
-  .container
-    if (!user)
-      a(href="/login") Вход
-      br
-      a(href="/register") Регистрация
-    if (user)
-      p Залогинен как  #{user.username}
-      a(href="/logout") Выйти
-  h1 Main page
+doctype html
+html
+  head
+    title CMS - admin
+  body
+    h1 Main page

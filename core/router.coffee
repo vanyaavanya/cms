@@ -11,7 +11,9 @@ debug             = require('debug')('cms:router')
 chalk             = require 'chalk'
 router            = express.Router()
 
-router.get '/', (req, res ) -> res.render 'index', user : req.user
+router.get '/', (req, res ) -> res.render 'index'
+
+# router.get '/', (req, res ) -> res.render 'index', user : req.user
 
 router.route '/register'
   .get (req, res) -> res.render 'register', {}
