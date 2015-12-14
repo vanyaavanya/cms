@@ -30,7 +30,7 @@ app.disable 'x-powered-by'  # Убирает X-Powered-By:Express из header
 
 
 # TEMPLATES
-app.set 'views', './views'
+app.set 'views', '../views'
 app.set 'view engine', 'jade'
 
 app.use require('express-session')(
