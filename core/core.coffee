@@ -17,6 +17,7 @@ logger            = require('./logger')(module)
 reqlogger         = require './reqlogger'
 db                = require './db'
 routes            = require './router'
+server            = require './server'
 
 app = express()
 
@@ -30,7 +31,7 @@ app.disable 'x-powered-by'  # Убирает X-Powered-By:Express из header
 
 
 # TEMPLATES
-app.set 'views', '../views'
+app.set 'views', './views'
 app.set 'view engine', 'jade'
 
 app.use require('express-session')(
@@ -72,7 +73,7 @@ app.use (err, req, res, next) ->
 process.on 'uncaughtException', (err) ->
   if not err.caught then debug chalk.red err 
 
-require('./server').server
+server.start(app)
 
 exports.db  = db
 exports.app = app
