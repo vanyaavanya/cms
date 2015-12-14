@@ -11,12 +11,14 @@ debug             = require('debug')('cms:router')
 chalk             = require 'chalk'
 router            = express.Router()
 
-router.get '/', (req, res ) -> res.render 'index', user : req.user
+
+router.get '/', (req, res ) ->
+  res.render 'index', user : req.user
 
 router.route '/register'
   .get (req, res) -> res.render 'register', {}
   .post (req, res, next) ->
-      Account.register(new Account({ username : req.body.username }), 
+      Account.register(new Account({ username : req.body.username }),
           req.body.password, 
           (err, account) ->
             if err then return res.render 'register', info: "Имя занято"
@@ -78,5 +80,15 @@ router.route '/dev/:param'
                                 debug chalk.red err.status, err, err.stack
                                 throw err
                               else res.send html
+
+
+# ATTACHMENT
+attachment = require './controllers/attachment'
+router.route '/upload'
+  .get (req, res ) -> res.render 'upload'
+  .post (req, res ) ->
+    attachment.create req, res
+    res.render 'upload'
+
 
 module.exports = router

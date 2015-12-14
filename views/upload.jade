@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .container
+    form(action='/upload' method='POST' enctype='multipart/form-data')
+      input(type='file' name='photo' multiple)
+      input(type='submit' value='Upload Image')
+    a(href="/")
+      h1 Main page
