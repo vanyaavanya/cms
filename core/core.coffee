@@ -74,6 +74,6 @@ process.on 'uncaughtException', (err) ->
   if not err.caught then debug chalk.red err 
 
 server.start(app)
- 
-exports.db  = db       
+
+exports.db  = db
 exports.app = app
