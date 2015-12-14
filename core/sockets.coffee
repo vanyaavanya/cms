@@ -15,8 +15,8 @@ module.exports.listen = (server) ->
     socket.on 'disconnect', () ->
       debug 'user disconnected'
 
-    io.of('/project').on 'connection', project.socket
-    # io.of('/task').on 'connection', task.socket
-    # io.of('/sprint').on 'connection', sprint.socket
+  io.of('/project').on 'connection', project.socket
+  # io.of('/task').on 'connection', task.socket
+  # io.of('/sprint').on 'connection', sprint.socket
 
 

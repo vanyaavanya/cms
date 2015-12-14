@@ -17,7 +17,6 @@ logger            = require('./logger')(module)
 reqlogger         = require './reqlogger'
 db                = require './db'
 routes            = require './router'
-server            = require './server'
 
 app = express()
 
@@ -73,7 +72,7 @@ app.use (err, req, res, next) ->
 process.on 'uncaughtException', (err) ->
   if not err.caught then debug chalk.red err 
 
-server.start(app)
+require('./server').server
 
 exports.db  = db
 exports.app = app
