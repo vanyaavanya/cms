@@ -4,7 +4,6 @@ moment    = require 'moment'
 moment.locale 'Ru'
 
 module.exports = {
-                  id: 12
                   name: faker.commerce.product()
                   url: '/sample-project'
                   description: faker.lorem.paragraph()
