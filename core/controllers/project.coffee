@@ -21,7 +21,7 @@ crud.retrieve = (req, res) ->
   Resource = mongoose.model 'Project'
   if req.params.id?
     Resource.findById req.params.id, (err, resource) ->
-      if err then res.send(500, { error: err }) 
+      if err then res.status(500).send({ error: err }) 
       else if resource then res.send resource
 
   else
@@ -50,3 +50,31 @@ exports.socket = (socket) ->
   socket.emit 'hi'
   socket.on 'some', (data) -> 
     debug 'some event ' + JSON.stringify data
+
+  socket.on 'project/create', (data) -> 
+    Resource = mongoose.model 'Project'
+    rec = new Resource()
+    rec.save (err, resource) ->
+      if err
+        debug 'ERR: ' + err
+      else 
+        debug 'new project created'
+        socket.emit 'project/created', { project: rec }
+
+  socket.on 'project/update', (data) ->
+    Resource = mongoose.model 'Project'
+    id = data.id
+    field = data.field
+    Resource.findByIdAndUpdate id, { $set: field }, {new: true}, (err, resource) ->
+      if err
+        debug err
+        socket.emit 'project/error', err
+      else
+        debug resource
+        # socket.emit 'project/updated', {project: field }
+        socket.broadcast.emit 'project/updated', {project: field }
+
+
+
+
+

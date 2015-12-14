@@ -1,8 +1,8 @@
 socketio = require('socket.io')
 debug    = require('debug')('cms:sockets')
 project  = require './controllers/project'
-task     = require './controllers/project'
-sprint   = require './controllers/project'
+# task     = require './controllers/task'
+# sprint   = require './controllers/sprint'
 
 module.exports.listen = (server) ->
   io = socketio.listen(server)
@@ -15,8 +15,8 @@ module.exports.listen = (server) ->
     socket.on 'disconnect', () ->
       debug 'user disconnected'
 
-    io.of('/project').on 'connection', project.socket
-    io.of('/task').on 'connection', task.socket
-    # io.of('/sprint').on 'connection', sprint.socket
+  io.of('/project').on 'connection', project.socket
+  # io.of('/task').on 'connection', task.socket
+  # io.of('/sprint').on 'connection', sprint.socket
 
 
