@@ -1,8 +1,15 @@
+###
+
+    Project: model
+
+###
+
 mongoose = require 'mongoose'
 
 schema = new mongoose.Schema
-  id: Number
-  name: String
+  name: 
+    type: String
+    default: 'Новый проект'
   url: String
   description: String
   sprint: [
