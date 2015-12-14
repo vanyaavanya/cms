@@ -40,7 +40,7 @@ router.route '/sample/:id'
   .put (req, res) -> sample.update(req, res)
   .delete (req, res) -> sample.delete(req, res)
 
-
+# STATIC
 staticPage = require './controllers/static' 
 router.route '/static'
   .get (req, res) -> staticPage.retrieve(req, res)
@@ -49,6 +49,16 @@ router.route '/static/:id'
   .get (req, res) -> staticPage.retrieve(req, res)
   .put (req, res) -> staticPage.update(req, res)
   .delete (req, res) -> staticPage.delete(req, res)
+
+# PROJECT
+project = require './controllers/project' 
+router.route '/project'
+  .get (req, res) -> project.crud.retrieve(req, res)
+  .post (req, res) -> project.crud.create(req, res)
+router.route '/project/:id'
+  .get (req, res) -> project.crud.retrieve(req, res)
+  .put (req, res) -> project.crud.update(req, res)
+  .delete (req, res) -> project.crud.delete(req, res)
 
 router.route '/login'
   .get (req, res) -> res.render 'login', user: req.user 
